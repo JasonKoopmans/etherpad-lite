@@ -1,0 +1,18 @@
+kind: pipeline
+type: docker
+name: default
+
+platform:
+    os: linux
+    arch: amd64
+
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    context: 
+    dockerfile: Dockerfile
+    repo: registry.koopmans.org/etherpad-lite
+    registry: http://registry.koopmans.org
+    insecure: true
+    tags: latest
